@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 
 
   def create
-    @topic = Topic.new(params[:topic])
+    @topic = Topic.new(topic_params)
     if @topic.save
     flash[:notice] = "Your topic was saved."
     redirect_to topics_path
@@ -25,8 +25,7 @@ class TopicsController < ApplicationController
 
   private
     def topic_params
-      allow = [:title, :text]
-      params.require(:topic).permit(allow)
+      params.require(:topic).permit(:title, :text)
     end
   
 end
