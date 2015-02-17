@@ -1,0 +1,12 @@
+<h1>List of all the topics</h1>
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+  <% @topics.each do |topic| %>
+    <tr>
+      <td><%= topic.title %></td>
+    </tr>
+  <% end %>
+</table>
