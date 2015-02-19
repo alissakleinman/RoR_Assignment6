@@ -1,0 +1,14 @@
+<h1> Create a new comment for this topic:</h1>
+<%= form_for :comment, url: {action: "create"} do |f| %>
+  <p>
+    <%= f.label :Comment %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :author %><br>
+    <%= f.text_field :author%>
+  </p>
+  <p>
+    <%= f.submit  %>
+  </p>
+<% end %>
